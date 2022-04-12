@@ -8,6 +8,8 @@ function addGoal () {
     listItemEl.textContent = enteredValue;
     listEl.appendChild(listItemEl);
     inputEl.value = '';
+
+    
 };
 
 buttonEl.addEventListener("click", addGoal);
