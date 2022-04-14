@@ -1,22 +1,28 @@
 const app = Vue.createApp({
-    data() {
-        return {
-            name: "Salman Bukhari",
-            age: 31,
-            imageSource: './assets/images/ernan-solozabal.jpg',
-        }
+  data() {
+    return {
+      counter: 10,
+      name: "",
+      confirmedName: "",
+    };
+  },
+  methods: {
+    confirmInput(e, secondName) {
+        this.confirmedName = e.target.value  + ' ' + secondName; 
     },
-    methods: {
-        printName() {
-            return this.name;
-        },
-        randomNumber() {
-            return Math.random();
-        },
-        addedAge() {
-            return this.age + 5;
-        }
+    submitForm() {
+        console.log("form submitted");
+    },
+    add(num) {
+        this.counter = this.counter + num;
+    },
+    remove(num) {
+        this.counter = this.counter - num;
+    },
+    setName(e, secondName) {
+        this.name=e.target.value + ' ' + secondName;
     }
+  }
 });
 
-app.mount("#assignment");
+app.mount('#events');
